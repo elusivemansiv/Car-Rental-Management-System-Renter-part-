@@ -83,7 +83,7 @@
   </div>
 <br>
 
-{!! $car_lists->links() !!}
+
 
 
   @endsection
