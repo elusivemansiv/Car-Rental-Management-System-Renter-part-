@@ -69,7 +69,7 @@ class car_service_renter_controller extends Controller
         
         $n= $req->session()->get('RUname');
         $car_list=CarService ::all()->where('car_owner_name','=',$n);
-        $car_list=CarService::paginate(3);
+        
         return view('Renter_Pages.carlist')->with('car_lists',$car_list);
 
     }
