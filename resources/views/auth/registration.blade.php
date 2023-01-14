@@ -41,12 +41,12 @@ use Illuminate\Support\Facades\Request;
                     <label class="form-label" for="form3Example1c">Choose Role</label>  <br>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="role" value="Customer"@if(Request::old('role')=="Customer") checked @endif >
+                        <input class="form-check-input" id="Customer" type="radio" name="role" value="Customer"@if(Request::old('role')=="Customer") checked @endif >
                         <label class="form-check-label" >Customer</label>
                       </div>
 
                     <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="role" value="Renter" @if(Request::old('role')=="Renter") checked @endif >
+                    <input class="form-check-input" type="radio" id="Renter" name="role" value="Renter" @if(Request::old('role')=="Renter") checked @endif >
                     <label class="form-check-label" >Renter</label>
                   </div>
 
@@ -101,7 +101,7 @@ use Illuminate\Support\Facades\Request;
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <label class="form-label" for="form3Example1c">Date of birth</label>
-                    <input type="date" name="Date_of_birth" class="form-control"  value="{{old('Date_of_birth')}}">
+                    <input type="date" id="Date_of_birth" name="Date_of_birth" class="form-control"  value="{{old('Date_of_birth')}}">
 
                        <span class="text-danger">@error('Date_of_birth') {{$message}} @enderror</span>
                     </div>
@@ -186,7 +186,7 @@ use Illuminate\Support\Facades\Request;
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <label class="form-label" for="form3Example1c">Profile Picture</label>
-                    <input type="file" name="pp" class="form-control"  value="{{old('pp')}}">
+                    <input type="file" id="pp" name="pp" class="form-control"  value="{{old('pp')}}">
 
                        <span class="text-danger">@error('pp') {{$message}} @enderror</span>
                     </div>
@@ -196,7 +196,7 @@ use Illuminate\Support\Facades\Request;
 
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    <button  type="submit" id="submit" class="btn btn-primary btn-lg">Register</button>
                   </div>
                   <br>
                   <h5>Already Registered</h5>

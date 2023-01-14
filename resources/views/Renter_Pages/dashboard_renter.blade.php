@@ -7,7 +7,7 @@
       <table class="table align-middle mb-0 bg-white">
   <thead class="bg-light">
     <tr>
-      <th>Renter Name</th>
+     
       <th>Customer Name</th>
       <th>Service ID</th>
       <th>Rent Price</th>
@@ -18,15 +18,7 @@
   <tbody>
   @foreach ($r_app as $c_user )
     <tr>
-      <td>
-        <div class="d-flex align-items-center">
-
-
-          <div class="ms-3">
-            <p class="fw-bold mb-1">{{$c_user->renter_name}}</p>
-          </div>
-        </div>
-      </td>
+     
       <td>
       <p class="text-muted mb-0">{{$c_user->customer_name}}</p>
 

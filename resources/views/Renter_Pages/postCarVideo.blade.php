@@ -44,11 +44,7 @@ use Illuminate\Support\Facades\Request;
 </div>
 </div>
 
-<div class="form-outline mb-4 text-secondary">
-<label class="form-check form-check-inline" for="form3Example1c">Select Date</label><br>
-<input type="date" name="v_post_date"   value=""><br>
-<span class="text-danger">@error('v_post_date') {{$message}} @enderror</span>
-</div>
+
 
 <div class="form-outline mb-4 text-secondary">
 <label class="form-check form-check-inline" for="form3Example1c">Select Video</label><br>

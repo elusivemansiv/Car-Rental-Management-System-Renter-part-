@@ -44,6 +44,7 @@ Route::get('Block_Users_List/{id}',[BlockUserController::class,'add_block'])->mi
 Route::get('Unblock_Users_List/{id}',[BlockUserController::class,'delete_block'])->middleware('admin')->name('admin unblock');
 
 Route::get('Add_Car_By_Admin',[AdminController::class,'add_car_by_admin'])->middleware('admin')->name('add car by admin');
+
 Route::get('Cars_List',[AdminController::class,'cars_list'])->middleware('admin')->name('cars list');
 
 Route::get('Admin_Approval',[AdminController::class,'admin_approval'])->middleware('admin')->name('admin approval');
@@ -68,6 +69,8 @@ Route::get('dashboard_renter',[RenterController::class,'dashboard_renter'])->mid
 Route::get('addNewCar',[car_service_renter_controller::class,'addNewCar'])->middleware('renter')->name('addNewCar');
 Route::post('addNewCar',[car_service_renter_controller::class,'addNewCarRenter'])->middleware('renter')->name('addNewCarRenter');
 Route::delete('delete',[car_service_renter_controller::class,'deleteCar'])->middleware('renter')->name('delete');
+
+
 Route::get('carlist',[car_service_renter_controller::class,'Carlist'])->middleware('renter')->name('carlist');
 Route::get('editCarlist/{id}',[car_service_renter_controller::class,'editCarlist'])->middleware('renter')->name('editCarlist');
 Route::post('editCarlistSubmit',[car_service_renter_controller::class,'editCarlistSubmit'])->middleware('renter')->name('editCarlistSubmit');
@@ -84,6 +87,8 @@ Route::post('search_view_user',[car_service_renter_controller::class,'search_vie
 Route::get('postCarVideo',[car_service_renter_controller::class,'postCarVideo'])->middleware('renter')->name('postCarVideo');
 Route::post('postNewCarVideo',[car_service_renter_controller::class,'postNewCarVideo'])->middleware('renter')->name('postNewCarVideo');
 Route::get('video_list',[car_service_renter_controller::class,'videolist'])->middleware('renter')->name('videolist');
+Route::get('editvideo_list/{id}',[car_service_renter_controller::class,'editvideolist'])->middleware('renter')->name('editvideo_list');
+Route::delete('deletev',[car_service_renter_controller::class,'deleteVideo'])->middleware('renter')->name('deletev');
 
 Route::get('notices',[RenterController::class,'notices'])->middleware('renter')->name('notices');
 

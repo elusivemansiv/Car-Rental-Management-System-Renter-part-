@@ -69,7 +69,16 @@ class car_service_renter_controller extends Controller
         
         $n= $req->session()->get('RUname');
         $car_list=CarService ::all()->where('car_owner_name','=',$n);
+       
+        return view('Renter_Pages.carlist')->with('car_lists',$car_list);
+
+    }
+
+    public function APICarlist(Request $req){
         
+        $n= $req->session()->get('RUname');
+        $car_list=CarService ::all()->where('car_owner_name','=',$n);
+       
         return view('Renter_Pages.carlist')->with('car_lists',$car_list);
 
     }
@@ -143,15 +152,15 @@ class car_service_renter_controller extends Controller
     {
         $request->validate([
            
-          'v_post_date'=>'required',
+          
           'video'=> 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
 
           ]);
           
           $post_car_video = new VideoPost;
-          $post_car_video->uploader_name=$request->username;
-          $post_car_video->uploader_id=$request->id;
-          $post_car_video->v_post_date=$request->v_post_date;
+          $post_car_video->uploader_name=$request->session()->get('RUname');
+          $post_car_video->uploader_id=$request->session()->get('Rid');
+          $post_car_video->v_post_date=new DateTime(today());
           $file_name = time().".".$request->file('video')->getClientOriginalExtension();
           $request->file('video')->move(public_path('pro_images'),$file_name); 
           $post_car_video->video = $file_name;        
@@ -171,6 +180,20 @@ class car_service_renter_controller extends Controller
         $video_list=VideoPost ::all()->where('uploader_name','=',$n);
         return view('Renter_Pages.video_list')->with('video_list',$video_list);
 
+    }
+
+    public function editvideolist(Request $req)
+    {
+        $video_list=VideoPost::where('id','=',$req->id)->first();
+        return view('Renter_Pages.editvideo_list')->with('video_list',$video_list);
+        
+    }
+
+    public function deleteVideo(Request $req){
+        
+        $video_list = VideoPost::find($req->id); 
+        $video_list->delete();
+        return redirect('/video_list');
     }
      
    

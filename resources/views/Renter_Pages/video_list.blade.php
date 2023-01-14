@@ -64,15 +64,15 @@
 <div class="row">
 <div class="col">
 
-<a href="" class="btn btn-primary">Edit</a>
+<a href="editvideo_list/{{$video_list->id}}" class="btn btn-primary">Edit</a>
 
 
 </div>
 <div class="col">
-<form action="" method="POST">
+<form action="{{route('deletev')}}" method="POST">
           @method('DELETE')
           @csrf
-          <input type="text" name="id" value="" hidden>
+          <input type="text" name="id" value="{{$video_list->id }}" hidden>
         <button class="btn btn-danger">Delete</button>
         </form>
 
@@ -84,7 +84,6 @@
       @endforeach
   </div>
 <br>
-
 
 
 

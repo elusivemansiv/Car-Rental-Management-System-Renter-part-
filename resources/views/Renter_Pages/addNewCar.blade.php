@@ -67,12 +67,12 @@ use Illuminate\Support\Facades\Request;
 <div class="form-outline mb-4 text-secondary">
 <label class="form-label" for="form6Example2">Car Type : </label>
 <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="car_type" value="Family"@if(Request::old('car_type')=="Family") checked @endif >
+      <input class="form-check-input" type="radio" id="Family" name="car_type" value="Family"@if(Request::old('car_type')=="Family") checked @endif >
       <label class="form-check-label" >Family</label>
     </div>
 
   <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="car_type" value="Non-family"@if(Request::old('car_type')=="Non-family") checked @endif >
+  <input class="form-check-input" type="radio" id="Non-family" name="car_type" value="Non-family"@if(Request::old('car_type')=="Non-family") checked @endif >
   <label class="form-check-label" >Non-family</label>
 </div><br>
 <span class="text-danger">@error('car_type') {{$message}} @enderror</span>
@@ -137,14 +137,14 @@ use Illuminate\Support\Facades\Request;
 
 <div class="form-outline mb-4 text-secondary">
 <label class="form-label" >Car details</label>
-<textarea class="form-control" name="car_details" rows="4">{{ old('car_details') }}</textarea>
+<textarea class="form-control" id="car_details" name="car_details" rows="4">{{ old('car_details') }}</textarea>
 
 <span class="text-danger">@error('car_details') {{$message}} @enderror</span>
 </div>
 
 <div class="form-outline mb-4 text-secondary">
 <label class="form-check form-check-inline" for="form3Example1c">Select Car Picture</label><br>
-<input type="file" name="car_pic"   value="{{old('car_pic')}}">
+<input type="file" id="carpic" name="car_pic"   value="{{old('car_pic')}}">
 <span class="text-danger">@error('car_pic') {{$message}} @enderror</span>
 </div>
 
