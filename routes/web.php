@@ -19,10 +19,10 @@ use App\Http\Controllers\renter\car_service_renter_controller;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/',[CustomAuthController::class,'home'])->name('home');
 Route::get('/login',[CustomAuthController::class,'login'])->name('login');
 Route::get('registration',[CustomAuthController::class,'registration']);
 

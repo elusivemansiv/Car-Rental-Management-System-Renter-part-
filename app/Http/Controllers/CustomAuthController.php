@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\CarService;
 use App\Models\BlockUser;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Hash;
@@ -11,9 +12,10 @@ use Illuminate\Support\Facades\Hash;
 class CustomAuthController extends Controller
 {
 
-    public function home(){
 
-        return view('home');
+    public function home(){
+        $car_list=CarService ::paginate(6);
+        return view('home')->with('car_lists',$car_list);
     }
     public function login(){
 

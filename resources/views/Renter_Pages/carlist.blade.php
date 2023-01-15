@@ -6,8 +6,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
+    
+    
     <title>CRMS Dashboard-Carlist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -23,7 +23,7 @@
 	<div class="row justify-content-center">
                       
                         
-                    </div>
+    </div>
 </div>
 
 <style type="text/css">
@@ -81,6 +81,7 @@
       </div>
       @endforeach
   </div>
+
 <br>
 
 

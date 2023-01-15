@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Support\Facades\Request;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +45,7 @@
     style="
       background-image: url('https://www.ecorentacar.com/wp-content/uploads/2019/03/Luxury-Fleet-Banner.jpg');
       
-      height: 500px;
+      height: 600px;
     "
   >
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -56,52 +60,96 @@
 </header>
 <div class="card text-center">
   <div class="card-header">
-    Featured
+   <h2> Available Cars For rent </h2>
+  </div></div>
+<div class="card-deck">
+@foreach ($car_lists as $car_list)
+  <div class="card">
+    <img class="card-img-top" src="{{asset('pro_images/'.$car_list->car_pic)}}" alt="Card image cap"width="250" height="250">
+    <div class="card-body">
+      <h5 class="card-title">Name:{{ $car_list->car_name }}</h5>
+      <p class="card-text">Rent for:{{ $car_list->rent_price }}TK</p>
+      <p class="card-text">Rent Provider:{{ $car_list->car_owner_name }}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"></small>
+      
+      
+    </div>
+    <a href="" class="btn btn-primary">Order</a>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+
+  @endforeach
   
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 pt-5 pb-2 ourTeam-hedding text-center">
+      <h1>Our Team</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,<strong> sed do eiusmod
+      tempor incididunt </strong>ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="row section-success ourTeam-box text-center">
+        <div class="col-md-12 section1">
+          <img src="https://scontent.fdac145-1.fna.fbcdn.net/v/t39.30808-6/308985197_3255901664669231_6298355565480652697_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_eui2=AeG83Dov1rMpTiJEkPB0f2Y_EtSHRJYkL50S1IdEliQvnVozcIlN0SA2I0zFdFkRBpDAR2PoOpGwpZyyl-oAQTOP&_nc_ohc=r-n-DQtvE8IAX9uBfVE&_nc_ht=scontent.fdac145-1.fna&oh=00_AfDQ5pYuGwnV6G1Wj9h9B4B_EkYFhKZ2Y1Xzy05yC6JduQ&oe=63C8FD41"width="300" height="300">
+        </div>
+        <div class="col-md-12 section2 pb-3">
+          <p> <h3> Hridoy Sheikh </h3> </p>
+          <span> <br> </span>
+        </div>
+        <div class="col-md-12 section3">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-dribbble" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="row section-info ourTeam-box text-center">
+        <div class="col-md-12 section1">
+          <img src="https://media.licdn.com/dms/image/D5603AQHXtAIB-w8MCA/profile-displayphoto-shrink_800_800/0/1669998426351?e=1679529600&v=beta&t=RoTz_cgcQEmmnz09rS2rDyarPy_pbZHSw3B0pX291uU"width="300" height="300">
+        </div>
+        <div class="col-md-12 section2 pb-3">
+          <p> <h3>Ahsan Mansiv </h3> </p>
+          <span> <br> </span>
+        </div>
+        <div class="col-md-12 section3">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-dribbble" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="row section-danger ourTeam-box text-center">
+        <div class="col-md-12 section1">
+          <img src="https://media.licdn.com/dms/image/C5603AQHZAk7_VpIpQA/profile-displayphoto-shrink_800_800/0/1643867320281?e=1679529600&v=beta&t=F1gc72eQhtW2EL0nBP50nXoDViG-t3zNRMNsvI56olc" width="300" height="300">
+        </div>
+        <div class="col-md-12 section2 pb-3">
+          <p><h3>S.M. Shahriar</h3></p>
+          <span> <br> </span>
+        </div>
+        <div class="col-md-12 section3">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-dribbble" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
-      <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-    <!-- Section: Social media -->
+   
 
     <!-- Section: Form -->
     <section class="">
